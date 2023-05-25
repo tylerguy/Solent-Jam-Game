@@ -15,15 +15,17 @@ public class playerController : MonoBehaviour
     {
         player = GameObject.Find("Player");
         cam = GameObject.Find("Camera").GetComponent<Camera>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // rotate player when mouse is moved left or right
-        player.transform.Rotate(0, Input.GetAxis("Mouse X")*sensitivity, 0);
+        player.transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity, 0);
         // rotate camera when mouse is moved up or down
-        cam.transform.Rotate(-Input.GetAxis("Mouse Y")*sensitivity, 0, 0);
+        cam.transform.Rotate(-Input.GetAxis("Mouse Y") * sensitivity, 0, 0);
     }
 
     // FixedUpdate is called once per physics frame
@@ -66,6 +68,6 @@ public class playerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
-        }   
-    }    
+        }
+    }
 }
