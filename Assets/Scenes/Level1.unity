@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 5.0002556, g: 5.8176727, b: 7.4871674, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 209260427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4eae4f513654254bb95018cb123bd74, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9014bd86c60da4a86950fd4e0cd26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &209260429
@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834269977}
   - component: {fileID: 834269976}
-  - component: {fileID: 834269975}
+  - component: {fileID: 834269978}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -783,26 +783,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &834269975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834269974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &834269976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +813,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834269978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834269974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1457818569
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,12 +954,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1457818569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714e5be325f435b47aadf1f66ce1fb2e, type: 3}
+  m_Script: {fileID: 11500000, guid: fa2637bcdfb60c14ea9095f75e416337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
   jumpForce: 100
-  sensitivity: 3
+  sensitivity: 1
   isGrounded: 1
 --- !u!54 &1457818575
 Rigidbody:
@@ -976,10 +986,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1457818569}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc35b979d55386146a09a9485e12a8d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7eb87bb611c9f7f49a317e1a85fc2882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 5000
+  bulletSpeed: 100
   bulletLife: 5
   fireRate: 0.5
 --- !u!1 &1683644053
@@ -1095,7 +1105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1683644053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe781b96f8b7e3e45acb62babefa8e49, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b02bd6dc8539e847961f11ec7f097cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletsFired: 0
