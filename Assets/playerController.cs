@@ -10,6 +10,8 @@ public class playerController : MonoBehaviour
     public float jumpForce = 100f;
     public float sensitivity = 1f;
     public bool isGrounded = true;
+    public RaycastHit hit;
+    private GameObject interact;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class playerController : MonoBehaviour
         cam = GameObject.Find("Camera").GetComponent<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        interact = GameObject.Find("Interact");
     }
 
     // Update is called once per frame
@@ -25,7 +28,32 @@ public class playerController : MonoBehaviour
         // rotate player when mouse is moved left or right
         player.transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity, 0);
         // rotate camera when mouse is moved up or down
-        cam.transform.Rotate(-Input.GetAxis("Mouse Y") * sensitivity, 0, 0);
+        // limit camera rotation to 90 degrees up or down
+        float camRotation = Input.GetAxis("Mouse Y") * sensitivity;
+        float currentRotation = cam.transform.localRotation.eulerAngles.x;
+        if (currentRotation > 180)
+        {
+            currentRotation -= 360;
+        }
+        float newRotation = Mathf.Clamp(currentRotation - camRotation, -90, 90);
+        cam.transform.localRotation = Quaternion.Euler(newRotation, 0, 0);
+
+        int layerMask = 1 << 13;
+
+        // cast a ray in the direction the camera is facing
+        // if the ray hits an interactable object, get the gameobject hit and call the interact function
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, layerMask))
+        {
+            interact.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                hit.transform.gameObject.GetComponent<interactableHandler>().interact();
+            }
+        }
+        // else
+        // {
+        //     interact.SetActive(false);
+        // }
     }
 
     // FixedUpdate is called once per physics frame
@@ -70,4 +98,6 @@ public class playerController : MonoBehaviour
             isGrounded = true;
         }
     }
+
+
 }
