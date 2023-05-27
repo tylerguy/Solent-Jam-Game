@@ -11,7 +11,6 @@ public class gunController : MonoBehaviour
     public float bulletLife = 5f;
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
-    RaycastHit hit;
 
     private GameObject bulletDirection;
     void Start()

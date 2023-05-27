@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Bullet
+  - Enemy
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Not in Reflection
   - Bullet
   - Player
-  - 
-  - 
+  - Enemy
+  - Interactable
   - 
   - 
   - 
